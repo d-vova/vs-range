@@ -10,11 +10,11 @@
  * @updated Fri, Nov 02 2012 - 23:10:35 -0700
  */
 
-var Boundary = exports.Boundary = require('./Boundary');
+var Boundary = exports.Boundary = require('./lib/Boundary');
 
-var Interval = exports.Interval = require('./Interval');
+var Interval = exports.Interval = require('./lib/Interval');
 
-var Range = exports.Range = require('./Range');
+var Range = exports.Range = require('./lib/Range');
 
 exports.create = function create ( ) {
   return new Range(arguments);
@@ -46,4 +46,12 @@ exports.intersect = function intersect ( ) {
 
 exports.invert = function invert ( ) {
   return new Range(arguments).invert();
+}
+
+if ( module == require.main ) {
+  console.log('Testing Boundary.js');
+  console.log('Testing Interval.js');
+  console.log('Testing Range.js');
+  console.log('Testing range.js');
+  console.log('Done');
 }
