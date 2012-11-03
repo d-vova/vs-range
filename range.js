@@ -16,8 +16,8 @@ var Interval = exports.Interval = require('./Interval');
 
 var Range = exports.Range = require('./Range');
 
-exports.create = function create ( range ) {
-  return new Range(range);
+exports.create = function create ( ) {
+  return new Range(arguments);
 }
 
 exports.unite = function unite ( ) {
@@ -44,6 +44,6 @@ exports.intersect = function intersect ( ) {
   return Range.intersect(ranges);
 }
 
-exports.invert = function invert ( range ) {
-  return (range instanceof Range ? range : new Range(range)).invert();
+exports.invert = function invert ( ) {
+  return new Range(arguments).invert();
 }
