@@ -18,7 +18,7 @@ Range is the underlying class that represents a series of numerical intervals
 var Range = require('vs-range').Range;
 ```
 
-###create###
+###create ( [ Interval ], [ Interval ] )###
 
 Create a new instance of Range using `create`:
 
@@ -32,7 +32,7 @@ or using `new`:
 var r = new Range(pRange, nRange);
 ```
 
-###shape###
+###shape ( [ Interval ] )###
 
 Convert an argument to an instance of Range using `shape`:
 
@@ -46,7 +46,7 @@ or using constructor:
 var r = Range(range);
 ```
 
-###unite/or###
+###unite ( [ Range ] ) / or ( Range )###
 
 Combine a group of ranges all together using `unite`;
 
@@ -60,7 +60,7 @@ or individually using `or`:
 var r = Range(r1).or(Range(r2)).or(Range(r3));
 ```
 
-###subtract/sub###
+###subtract ( Range ) / sub ( Range )###
 
 Subtract one range from another one using `subtract`:
 
@@ -74,7 +74,7 @@ or using `sub`:
 var r = Range(rangeA).sub(Range(rangeB));
 ```
 
-###intersect/and###
+###intersect ( [ Range ] ) / and ( Range )###
 
 Find the common part of a group of ranges all together using `intersect`:
 
@@ -86,8 +86,9 @@ or individually using `and`:
 
 ```javascript
 var r = Range(r1).and(Range(r2)).and(Range(r3));
+```
 
-###invert/not###
+###invert ( Range ) / not ( )###
 
 Find the inverse of a range using `invert`:
 
@@ -101,7 +102,7 @@ or using `not`:
 var r = Range(range).not();
 ```
 
-###random###
+###random ( Range ) / random ( )###
 
 Generate a random value that belongs to the range using `random`:
 
@@ -115,7 +116,7 @@ or:
 var v = Range(range).random();
 ```
 
-###filter###
+###filter ( Function, Function, Function, Function )###
 
 Add constraints on the elements included in range using `filter`:
 
