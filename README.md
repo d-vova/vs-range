@@ -165,3 +165,12 @@ var random = function random ( min, max ) {
 
 var r = Range(range).filter(check, random, next, previous);
 ```
+
+
+##Interval##
+
+Interval specifies a span of numbers and represents a building block of a range
+
+```javascript
+var Interval = require('vs-range').Interval;
+```
