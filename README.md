@@ -37,7 +37,7 @@ var r = new Range(pRange, nRange);
 
 ###shape ( range )###
 
-* `Range | [ Interval ]`
+* `Range | [ Interval ]` - range to be shaped
 
 Convert an argument to an instance of Range using `shape`:
 
@@ -53,9 +53,9 @@ var r = Range(range);
 
 ###unite ( ranges ) / or ( range )###
 
-* `[ Range | [ Interval ] ]`
+* `[ Range | [ Interval ] ]` - list of ranges to be added together
 
-* `Range | [ Interval ]`
+* `Range | [ Interval ]` - a range to add
 
 Combine a group of ranges all together using `unite`;
 
@@ -71,7 +71,7 @@ var r = Range(r1).or(Range(r2)).or(Range(r3));
 
 ###subtract ( range ) / sub ( range )###
 
-* `Range | [ Interval ]`
+* `Range | [ Interval ]` - a range to subtract
 
 Subtract one range from another one using `subtract`:
 
@@ -87,9 +87,9 @@ var r = Range(rangeA).sub(Range(rangeB));
 
 ###intersect ( ranges ) / and ( range )###
 
-* `[ Range | [ Interval ] ]`
+* `[ Range | [ Interval ] ]` - a list of ranges to be intersected
 
-* `Range | [ Interval ]`
+* `Range | [ Interval ]` - a range to intersect
 
 Find the common part of a group of ranges all together using `intersect`:
 
@@ -105,7 +105,7 @@ var r = Range(r1).and(Range(r2)).and(Range(r3));
 
 ###invert ( range ) / not ( )###
 
-* `Range | [ Interval ]`
+* `Range | [ Interval ]` - a range to invert
 
 Find the inverse of a range using `invert`:
 
@@ -121,7 +121,7 @@ var r = Range(range).not();
 
 ###random ( range ) / random ( )###
 
-* `Range | [ Interval ]`
+* `Range | [ Interval ]` - a range to use for generation
 
 Generate a random value that belongs to the range using `random`:
 
@@ -137,10 +137,10 @@ var v = Range(range).random();
 
 ###filter ( check, random, next, previous )###
 
-* `Function ( Number )` - check if the value is lying in range
-* `Function ( Number, Number )` - generate a random number included in range
-* `Function ( Number ) | null` - get the next value in range
-* `Function ( Number ) | null` - get the previous value in range
+* `Function ( value: Number )` - check if the value is lying in range
+* `Function ( min: Number, max: Number )` - generate a random number included in range
+* `Function ( value: Number ) | null` - get the next value in range
+* `Function ( value: Number ) | null` - get the previous value in range
 
 Add constraints on the elements included in range using `filter`:
 
