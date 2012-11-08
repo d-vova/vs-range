@@ -18,9 +18,12 @@ Range is the underlying class that represents a series of numerical intervals
 var Range = require('vs-range').Range;
 ```
 
-###create ( [ Interval ], [ Interval ] )###
+###create ( positive, negative )###
 
-Create a new instance of Range using `create`:
+* Range | [ Interval ] - range of included values
+* Range | [ Interval ] - range of excluded values
+
+Create a new instance of Range as `positive - negative` using `create`:
 
 ```javascript
 var r = Range.create(pRange, nRange);
@@ -32,7 +35,9 @@ or using `new`:
 var r = new Range(pRange, nRange);
 ```
 
-###shape ( [ Interval ] )###
+###shape ( range )###
+
+* Range | [ Interval ]
 
 Convert an argument to an instance of Range using `shape`:
 
@@ -46,7 +51,11 @@ or using constructor:
 var r = Range(range);
 ```
 
-###unite ( [ Range ] ) / or ( Range )###
+###unite ( ranges ) / or ( range )###
+
+* [ Range | [ Interval ] ]
+
+* Range | [ Interval ]
 
 Combine a group of ranges all together using `unite`;
 
@@ -60,7 +69,9 @@ or individually using `or`:
 var r = Range(r1).or(Range(r2)).or(Range(r3));
 ```
 
-###subtract ( Range ) / sub ( Range )###
+###subtract ( range ) / sub ( range )###
+
+* Range | [ Interval ]
 
 Subtract one range from another one using `subtract`:
 
@@ -74,7 +85,11 @@ or using `sub`:
 var r = Range(rangeA).sub(Range(rangeB));
 ```
 
-###intersect ( [ Range ] ) / and ( Range )###
+###intersect ( ranges ) / and ( range )###
+
+* [ Range | [ Interval ] ]
+
+* Range | [ Interval ]
 
 Find the common part of a group of ranges all together using `intersect`:
 
@@ -88,7 +103,9 @@ or individually using `and`:
 var r = Range(r1).and(Range(r2)).and(Range(r3));
 ```
 
-###invert ( Range ) / not ( )###
+###invert ( range ) / not ( )###
+
+* Range | [ Interval ]
 
 Find the inverse of a range using `invert`:
 
@@ -102,7 +119,9 @@ or using `not`:
 var r = Range(range).not();
 ```
 
-###random ( Range ) / random ( )###
+###random ( range ) / random ( )###
+
+* Range | [ Interval ]
 
 Generate a random value that belongs to the range using `random`:
 
@@ -116,7 +135,12 @@ or:
 var v = Range(range).random();
 ```
 
-###filter ( Function, Function, Function, Function )###
+###filter ( check, random, next, previous )###
+
+* Function ( Number ) - check if the value is lying in range
+* Function ( Number, Number ) - generate a random number included in range
+* Function ( Number ) | null - get the next value in range
+* Function ( Number ) | null - get the previous value in range
 
 Add constraints on the elements included in range using `filter`:
 
