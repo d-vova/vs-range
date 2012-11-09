@@ -174,3 +174,8 @@ Interval specifies a span of numbers and represents a building block of a range
 ```javascript
 var Interval = require('vs-range').Interval;
 ```
+
+
+##License##
+
+MIT
